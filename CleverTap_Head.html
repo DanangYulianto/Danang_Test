@@ -22,5 +22,21 @@
      <body>
          <!-- CleverTap Integration Goes Here -->
          <button id="productViewedBtn">View Product</button>
+     <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+     </style>
+     <script type="text/javascript">
+        document.getElementById('productViewedBtn').onclick = function () {
+            clevertap.event.push("Product Viewed", {
+                "Product ID": 1,
+                "Product Name": "CleverTap",
+                "Product Image": "https://d35fo82fjcw0y8.cloudfront.net/2018/07/26020307/customer-success-clevertap.jpg"
+            });
+        };
+     </script>
      </body>
      </html>
