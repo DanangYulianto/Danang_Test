@@ -4,6 +4,20 @@
          <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <title>CleverTap Integration</title>
+     <script type="text/javascript">
+        var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+        clevertap.account.push({"id": "TEST-86Z-99Z-6R7Z"});
+        clevertap.privacy.push({optOut: false});
+        clevertap.privacy.push({useIP: true});
+        (function () {
+            var wzrk = document.createElement('script');
+            wzrk.type = 'text/javascript';
+            wzrk.async = true;
+            wzrk.src = 'https://cdn.clevertap.com/js/wzrk.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wzrk, s);
+        })();
+     </script>
      </head>
      <body>
          <!-- CleverTap Integration Goes Here -->
