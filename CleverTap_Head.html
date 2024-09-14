@@ -18,11 +18,25 @@
             s.parentNode.insertBefore(wzrk, s);
         })();
     </script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-messaging.js"></script>
+     <script>
+         var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+         };
+         firebase.initializeApp(firebaseConfig);
+         const messaging = firebase.messaging();
+     </script>
 </head>
 <body>
     <!-- CleverTap Integration Button -->
     <button id="productViewedBtn">View Product</button>
-
     <script type="text/javascript">
         document.getElementById('productViewedBtn').onclick = function () {
             // Push the "Product Viewed" event to CleverTap
@@ -31,7 +45,6 @@
                 "Product Name": "CleverTap",
                 "Product Image": "https://d35fo82fjcw0y8.cloudfront.net/2018/07/26020307/customer-success-clevertap.jpg"
             });
-
             // Update user profile with email
             clevertap.profile.push({
                 "Site": {
